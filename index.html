@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Calculator</title>
-</head>
-<body>
-  <h1>My Calculator</h1>
-  <input type="text" id="input_area"/>
-  <label id="result">--</label>
-  <br>
-  <input type="Submit" id="calculatebtn" value="Calculate">
-  <label id="query">--</label>
-  <script src="calculator.js"></script>
-  <script type="text/javascript">
-    document.getElementById('calculatebtn').onclick = function(e){
-	var input = document.getElementById('input_area').value;
-        document.getElementById('result').innerHTML = eval(input);
-        document.getElementById('query').innerHTML = input;
-        
-    }
-  </script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>My Calculator</h1>
+        <input type="text" id="input_area"/>
+        <br>
+        <table>
+            <tr>
+                <td><input class="ui_button" type="button" id="number_1" value="1" ></td>
+                <td><input class="ui_button" type="button" id="number_2" value="2" ></td>
+                <td><input class="ui_button" type="button" id="number_3" value="3" ></td>
+                <td><input class="ui_button" type="button" id="plus" value="+" ></td>
+            </tr>
+            <tr>
+                <td><input class="ui_button" type="button" id="number_4" value="4" ></td>
+                <td><input class="ui_button" type="button" id="number_5" value="5" ></td>
+                <td><input class="ui_button" type="button" id="number_6" value="6" ></td>
+                <td><input class="ui_button" type="button" id="minus" value="-" ></td>
+            </tr>
+            <tr>
+                <td><input class="ui_button" type="button" id="number_7" value="7" ></td>
+                <td><input class="ui_button" type="button" id="number_8" value="8" ></td>
+                <td><input class="ui_button" type="button" id="number_9" value="9" ></td>
+                <td><input class="ui_button" type="button" id="multiply" value="*" ></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="ui_button" type="button" id="number_0" value="0" ></td>
+                <td></td>
+                <td><input class="ui_button" type="button" id="division" value="/" ></td>
+            </tr>
+        </table>
+        <input type="Submit" id="calculatebtn" value="Calculate">
+        <script src="calculator.js"></script>
+        <script type="text/javascript">
+            document.getElementById('calculatebtn').onclick = function(e) {
+                var input = document.getElementById('input_area').value;
+                document.getElementById('result').innerHTML = eval(input);
+
+            }
+            $('.ui_button').click(function (){
+                $('#input_area').val($('#input_area').val() + $(this).val());
+            });
+        </script>
+    </body>
