@@ -43,6 +43,9 @@
                 document.getElementById('result').innerHTML = eval(input);
 
             }
+            $().click(function(){
+                $('#input_area').val(calculate($('#input_area').val()));
+            });
             $('.ui_button').click(function (){
                 $('#input_area').val($('#input_area').val() + $(this).val());
             });
