@@ -9,3 +9,7 @@ QUnit.test("Testing Plus function", function(assert) {
 QUnit.test("Testing Plus function with failing", function(assert) {
   assert.equal(5, plus(2, 2), "2 + 2 is 5");
 });
+
+QUnit.test("Testing minus function", function(assert) {
+  assert.equal(4, minus(6, 2), "6 - 2 is 4");
+});
