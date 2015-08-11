@@ -10,11 +10,14 @@
   <label id="result">--</label>
   <br>
   <input type="Submit" id="calculatebtn" value="Calculate">
+  <label id="query">--</label>
   <script src="calculator.js"></script>
   <script type="text/javascript">
     document.getElementById('calculatebtn').onclick = function(e){
 	var input = document.getElementById('input_area').value;
         document.getElementById('result').innerHTML = eval(input);
+        document.getElementById('query').innerHTML = input;
+        
     }
   </script>
 </body>
